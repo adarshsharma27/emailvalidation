@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script>
+    function validation()
+    {
+        var useremail=document.getElementById("useremail").value;
+      
+ 
+        if(useremail=="")
+        { 
+            document.getElementById("emaildis").innerHTML="please enter email";
+            return false;
+        }
+        else if (useremail.indexOf('@')<=0)
+        { 
+            document.getElementById("emaildis").innerHTML="please enter  in proper format";
+            return false;
+        }
+        else if ((useremail.charAt((useremail.length-4) !='.') )&&(useremail.charAt((useremail.length-3)!='.' )))
+        { 
+            document.getElementById("emaildis").innerHTML="please enter  in proper --- format";
+            return false;
+        }       
+
+
+    }
+    
+    </script>
+</head>
+<body>
+        <form method="POST" onsubmit="return validation()"   autocomplete="off" autofocus="on">   
+                 <label>email</label>
+                <input type="text" id="useremail" autofocus="on"> <!-- use email in put  not do less think for validation-->
+              
+                <p id="emaildis" >  </p>
+                <input type="submit" value="submit">
+                        </form> 
+</body>
+</html>
